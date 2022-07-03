@@ -82,3 +82,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        #получение запрошенных данных в формате JSON
+        'rest_framework.renderers.JSONRenderer',
+        #включение/отключение визуального API в браузере
+        'rest_framework.renderers.BrowsableAPIRenderer'
+    ]
+}

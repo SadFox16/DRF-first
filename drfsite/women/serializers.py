@@ -7,7 +7,7 @@ from .models import Women
 class WomenSerializer(serializers.ModelSerializer):
     class Meta:
         model = Women
-        fields = ('title', 'content', 'cat')
+        fields = '__all__'
 
 # def encode():
 #     model = WomenModel('Angelina', 'Content: Angelina')
