@@ -16,6 +16,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
+    #аутентификация по обычным токенам
+    'djoser',
     'women',
 ]
 
@@ -88,10 +91,16 @@ REST_FRAMEWORK = {
         #получение запрошенных данных в формате JSON
         'rest_framework.renderers.JSONRenderer',
         #включение/отключение визуального API в браузере
-        'rest_framework.renderers.BrowsableAPIRenderer'
+        'rest_framework.renderers.BrowsableAPIRenderer',
     ],
     #права доступа по умолчанию
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    #аутентификация по токенам djoser + аутентификакация по сессиям
+    'DEFAULT_AUTHENTICATION-CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
 }
