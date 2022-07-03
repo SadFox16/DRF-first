@@ -3,6 +3,7 @@ from django.urls import path, include
 from women.views import WomenAPIList, WomenAPIUpdate, WomenAPIDetailView, WomenAPIDestroy
 #from women.views import WomenViewSet
 from rest_framework import routers
+from rest_framework import urls
 
 
 #создаем и регистрируем роутер
@@ -12,6 +13,7 @@ from rest_framework import routers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/women-auth/', include('rest_framework.urls')), #http://127.0.0.1:8000/api/v1/women-auth/login/ для регистрации
     path('api/v1/women/', WomenAPIList.as_view()),
     path('api/v1/women/<int:pk>/', WomenAPIUpdate.as_view()),
     path('api/v1/womendelete/<int:pk>/', WomenAPIDestroy.as_view()),

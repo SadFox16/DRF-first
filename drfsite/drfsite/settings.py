@@ -92,6 +92,6 @@ REST_FRAMEWORK = {
     ],
     #права доступа по умолчанию
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
+        'rest_framework.permissions.IsAuthenticated',
     ]
 }
