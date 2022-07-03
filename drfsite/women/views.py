@@ -7,10 +7,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 from .models import Women, Category
 from .serializers import WomenSerializer
-<<<<<<< Updated upstream
-=======
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, AllowAny, IsAuthenticated, IsAdminUser
->>>>>>> Stashed changes
 from .permissions import IsAdminOrReadOnly
 
 
@@ -45,7 +42,7 @@ class WomenAPIList(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
 
 
-#для обновления одной записи(только PUT или PATCH
+#для обновления одной записи(только PUT или PATCH)
 class WomenAPIUpdate(generics.UpdateAPIView):
     #отправляем одну измененную запись клиенту(ленивый запрос)
     queryset = Women.objects.all()
@@ -53,19 +50,18 @@ class WomenAPIUpdate(generics.UpdateAPIView):
     permission_classes = (IsAdminOrReadOnly,)
 
 
-<<<<<<< Updated upstream
 #для изменения/чтения записи
 class WomenAPIDetailView(generics.RetrieveUpdateAPIView):
     queryset = Women.objects.all()
     serializer_class = WomenSerializer
     permission_classes = (IsAdminOrReadOnly, )
-=======
+
+
 #для изменения/удаления/чтения записи
 class WomenAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Women.objects.all()
     serializer_class = WomenSerializer
     permission_classes = (IsAdminOrReadOnly,)
->>>>>>> Stashed changes
 
 
 #для удаления записи

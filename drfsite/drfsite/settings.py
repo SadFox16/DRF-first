@@ -91,7 +91,6 @@ REST_FRAMEWORK = {
         #получение запрошенных данных в формате JSON
         'rest_framework.renderers.JSONRenderer',
         #включение/отключение визуального API в браузере
-<<<<<<< Updated upstream
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
     #права доступа по умолчанию
@@ -104,12 +103,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
-=======
-        'rest_framework.renderers.BrowsableAPIRenderer'
-    ],
     #права доступа по умолчанию
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
     ]
->>>>>>> Stashed changes
 }

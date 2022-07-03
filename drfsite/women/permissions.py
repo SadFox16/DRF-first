@@ -7,10 +7,6 @@ class IsAdminOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
         else:
-<<<<<<< Updated upstream
-            return bool(request.user and request.user.is_staff)
-=======
             return bool(request.user and request.user.is_staff)
 
 
->>>>>>> Stashed changes
